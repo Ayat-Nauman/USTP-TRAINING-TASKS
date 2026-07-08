@@ -1,0 +1,28 @@
+// SET PARAMETERIZED INTERFACE SO THAT THE VALUE OF 
+// INTERFACE CAN BE UPDATED FROM OUTSIDE AS WELL
+
+interface add_interface #(parameter N = 4);
+
+logic [N-1:0] a;
+logic [N-1:0] b;
+logic [N-1:0] s;
+logic cout;
+
+// MODPORT FOR DUT
+modport dut(
+input a, b, 
+output s, cout
+);
+
+// MODPORT FOR DRIVER
+// REMEMBER: INPUTS OF DUT WILL BE OUTPUTS AND OUTPUTS
+// WILL BE INPUTS OF THE TESTBENCH 
+
+// DRIVER IS CONNECTED TO GENERATOR VIA MAILBOX AND THROUGH MODPORT WITH DUT. 
+// SO THE INPUTS OF DRIVER ARE NOT DECLARED IN THE PORT
+modport driver(
+output a, b
+);
+
+// MODPORT 
+

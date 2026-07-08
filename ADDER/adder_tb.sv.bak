@@ -1,0 +1,64 @@
+// TOP TESTBENCH -IMPORT ALL THE CLASSES FROM PACKAGE FILE
+import adder_classes::*;
+module adder_tb;
+
+parameter GLOBAL_N = 4;
+
+add_interface #(GLOBAL_N) intf();
+
+int no_of_inputs = 10;
+
+//instantiate DUT
+adder dut(
+.intf(intf)
+);
+
+// create all the mailboxes that we need to pass in new functions of the classes
+// allocate memory to mailboxes simultaneously
+mailbox #(trans #(GLOBAL_N)) gen2drv_arg = new(); // generator and driver classes need gen2drv mailbox
+mailbox #(trans #(GLOBAL_N)) mon2scb = new(); // monitor and scoreboard classes need mon2scb mailbox
+
+// class objects creation
+// we have total 5 classes: trans, generator, driver, monitor, and scoreboard
+// since transaction class is used by all other classes, its object is already
+// created in the respective classes
+// therefore we will make objects for the remaining 4 classes
+generator 	#(GLOBAL_N) gen;
+driver		#(GLOBAL_N) drv;
+monitor 	#(GLOBAL_N) mon;
+scoreboard 	#(GLOBAL_N) scb;
+
+initial begin
+	// allocate memory to all classes by calling new() function
+	gen = new(gen2drv_arg);
+	drv = new(gen2drv_arg, intf.driver); // shared interface, although names are different 
+	mon = new(intf.monitor, mon2scb); // but internally the wires are same
+	scb = new(mon2scb);
+	
+	gen.main(no_of_inputs);
+
+	fork
+	//generator
+	begin
+		gen.main(no_of_inputs);
+	end
+	// Driver
+	begin
+		drv.main();
+	end
+	// Monitor
+	begin
+		mon.main();
+	end
+	// Scoreboard
+	begin
+		scb.main();
+	end
+join_none
+wait(scb.pass_count + scb.fail_count == no_of_inputs);
+#1;
+scb.display();
+
+$stop;
+end
+endmodule
