@@ -1,0 +1,22 @@
+interface mux_interface #(parameter N);
+logic [N-1:0] in;
+logic [($clog2(N)-1):0]ctrl;
+logic out;
+
+// MODPORT DUT
+modport dut(
+input in, ctrl,
+output out
+);
+
+// MODPORT DRIVER
+modport driver(
+output in, ctrl
+);
+
+// MODPORT MONITOR
+modport monitor(
+input in, out, ctrl
+);
+
+endinterface

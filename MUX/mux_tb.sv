@@ -1,0 +1,54 @@
+import mux_classes::*;
+module mux_tb;
+
+parameter GLOBAL_N = 4;
+
+mux_interface #(GLOBAL_N) intf();
+
+int no_of_inputs = 10;
+
+mux dut(
+.intf(intf)
+);
+
+mailbox #(trans #(GLOBAL_N)) gen2drv = new(); // generator and driver classes need gen2drv mailbox
+mailbox #(trans #(GLOBAL_N)) mon2scb = new(); // monitor and scoreboard classes need mon2scb mailbox
+
+// class objects
+generator 	#(GLOBAL_N) gen;
+driver		#(GLOBAL_N) drv;
+monitor 	#(GLOBAL_N) mon;
+scoreboard 	#(GLOBAL_N) scb;
+
+initial begin
+	// allocate memory to all classes by calling new() function
+	gen = new(gen2drv);
+	drv = new(gen2drv, intf.driver);
+	mon = new(intf.monitor, mon2scb);
+	scb = new(mon2scb);
+
+	fork
+	//generator
+	begin
+		gen.main(no_of_inputs);
+	end
+	// Driver
+	begin
+		drv.main();
+	end
+	// Monitor
+	begin
+		mon.main();
+	end
+	// Scoreboard
+	begin
+		scb.main();
+	end
+join_none
+wait(scb.pass_count + scb.fail_count == no_of_inputs);
+#1;
+scb.display();
+#1;
+$stop;
+end
+endmodule

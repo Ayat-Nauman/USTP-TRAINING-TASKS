@@ -1,0 +1,31 @@
+{C:/Users/Noman Traders/Desktop/AYAT/MODELSIM/MUX/mux.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Noman Traders/Desktop/AYAT/MODELSIM/MUX/mux.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux
+
+Top level modules:
+	mux
+
+} {} {}} {C:/Users/Noman Traders/Desktop/AYAT/MODELSIM/MUX/mux_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Noman Traders/Desktop/AYAT/MODELSIM/MUX/mux_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package mux_tb_sv_unit
+-- Importing package mux_classes
+-- Compiling module mux_tb
+
+Top level modules:
+	mux_tb
+
+} {} {}} {C:/Users/Noman Traders/Desktop/AYAT/MODELSIM/MUX/package.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Noman Traders/Desktop/AYAT/MODELSIM/MUX/package.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package mux_classes
+
+Top level modules:
+	--none--
+
+} {} {}} {C:/Users/Noman Traders/Desktop/AYAT/MODELSIM/MUX/intf.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Noman Traders/Desktop/AYAT/MODELSIM/MUX/intf.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling interface mux_interface
+
+Top level modules:
+	--none--
+
+} {} {}}

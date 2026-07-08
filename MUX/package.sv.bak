@@ -1,0 +1,101 @@
+package mux_classes;
+
+parameter GLOBAL_N = 4;
+class trans #(parameter N = GLOBAL_N);
+	rand bit [N-1:0] in; 
+	rand bit [$clog2(N-1):0] ctrl;
+	bit out;
+endclass
+
+class generator #(parameter N = GLOBAL_N);
+	trans #(N) T;
+	mailbox #(trans #(N)) gen2drv; //mailbox that send data to generator class
+	function new(mailbox #(trans #(N)) gen2drv);
+		this.gen2drv = gen2drv; 
+	endfunction
+	// Task to generate input stimulus
+	task main(int no_of_inputs);
+		repeat(no_of_inputs) begin
+			//#10;
+			T = new(); 
+			T.in = $urandom_range((2**N)-1,0);
+			T.ctrl = $urandom_range(($clog2(N)-1),0);
+			gen2drv.put(T);
+		end
+	endtask
+endclass
+
+class driver #(parameter N = GLOBAL_N);
+	virtual mux_interface #(.N(N)).driver vif; 
+	mailbox #(trans #(N)) gen2drv;
+	function new(mailbox #(trans #(N)) gen2drv, virtual mux_interface #(.N(N)).driver vif); 
+		this.gen2drv = gen2drv; // This connects the driver's local handle to the actual mailbox object
+		this.vif = vif; // This connects the driver's local handle to the actual interface
+	endfunction
+	
+	task main();
+		forever begin
+			trans #(N) T;
+			gen2drv.get(T);
+			vif.in <= T.in;
+			vif.ctrl <= T.ctrl;
+			#10;
+		end
+	endtask
+endclass
+
+
+class monitor #(parameter N = GLOBAL_N);
+	virtual mux_interface #(N).monitor vif;
+	mailbox #(trans #(N)) mon2scb;
+
+	function new (virtual mux_interface #(N).monitor vif, mailbox #(trans #(N)) mon2scb);
+		this.mon2scb = mon2scb;
+		this.vif = vif;
+	endfunction
+
+	task main();
+		trans #(N) T;
+		forever begin
+			@(vif.ctrl);
+			T = new();
+			#1
+			T.in = vif.in;
+			T.ctrl = vif.ctrl;
+			T.out = vif.out;
+			mon2scb.put(T);
+			#9;
+		end
+	endtask
+	
+endclass 
+
+class scoreboard #(parameter N = GLOBAL_N);	
+	bit exp_out;
+	int pass_count = 0;
+	int fail_count = 0;
+	mailbox #(trans #(N)) mon2scb;
+	function new(mailbox #(trans #(N)) mon2scb);
+		this.mon2scb = mon2scb;
+	endfunction
+	task main();
+		forever begin
+			trans #(N) T;
+			mon2scb.get(T);
+			//#10;
+			exp_out = T.in[T.ctrl];
+			$display("SCOREBOARD:  Out_dut = %d,Out_exp = %0d", T.out, exp_out);
+			if( exp_out == T.out) pass_count = pass_count + 1;
+			else fail_count = fail_count + 1;
+		end
+	endtask
+	function void display();
+		if(fail_count > 0)
+			$display("Simulation Failed - %0d Test cases failed", fail_count);
+		else 
+			$display("Simulation Successfull - %0d Test cases Failed and %0d Test cases passed", fail_count, pass_count);
+	endfunction
+
+endclass
+
+endpackage
