@@ -1,0 +1,119 @@
+// THIS LAYERED TESTBENCH PROVIDES A TEMPLATE FOR SEQUENTIAL CIRCUITS
+// WITH NO INPUTS OTHER THAN THE CLOCK AND RESET
+package counter_classes;
+parameter GLOBAL_N = 4;
+
+// CLOCK IS NEVER INCLUDED IN TRANSACTION CLASS
+// WE'LL ADD CLOCK IN DRIVER CLASS
+class trans #(parameter N = GLOBAL_N);
+	rand bit rst;
+	bit [N-1:0] count;
+//CONSTRAINTS ARE ALWAYS ADDED IN TRANSACTION CLASS
+//If you randomize a reset bit with equal probability ($50\%$ chance of 0, $50\%$ chance of 1), 
+// your counter will be reset constantly on almost every other clock cycle and 
+// will never actually get a chance to count up! This distribution ensures it counts
+// normally $90\%$ of the time and only resets occasionally ($10\%$).
+	constraint rst_distribution { rst dist {1'b1 := 10, 1'b0 := 90}; }
+// constraint is the keyword
+// {rst = the signal at which the constraint is applied
+// dist is the keyword for distribution
+// := operator assigns a fixed statistical weight to a specific value or a range of values.
+// 1'b1 := 10 means: "Give the value = 1 for 10% of the trans."
+// 1'b0 := 90 means: "Give the value = 0 for 90% of the trans." 
+	
+endclass
+
+class generator #(parameter N = GLOBAL_N);
+	mailbox #(trans #(N)) gen2drv;
+	trans #(N) T;
+	function new(mailbox #(trans #(N)) gen2drv_arg);
+		gen2drv = gen2drv_arg;
+	endfunction
+	task main(int no_of_inputs); 
+    		int rand_weight = 0;
+    		for (int i = 0; i < no_of_inputs; i++) begin
+        		T = new();
+        		rand_weight = $urandom_range(1, 100);
+        		//Force Reset on the very first input transaction
+        		if (i == 0) begin
+            			T.rst = 1'b1;
+        		end 
+        		// Otherwise, use your 10% weight distribution for subsequent inputs
+        		else if (rand_weight <= 10) begin
+            			T.rst = 1'b1;
+        		end 
+        		else begin
+            			T.rst = 1'b0;
+        		end
+        gen2drv.put(T);
+    end
+endtask
+endclass
+
+class driver #(parameter N = GLOBAL_N);
+	mailbox #(trans #(N)) gen2drv; //shared mailbox of driver and generator
+	virtual counter_interface #(N).driver vif;
+	function new(mailbox #(trans #(N)) gen2drv_arg, virtual counter_interface #(N).driver drv_vif);
+		gen2drv = gen2drv_arg;
+		vif = drv_vif;
+	endfunction
+	task main();
+		forever begin
+			trans #(N) T;
+			gen2drv.get(T);
+			vif.rst = T.rst; 	
+			@(posedge vif.clk);	
+			#1;
+		end
+	endtask
+endclass
+
+class monitor #(parameter N = GLOBAL_N);
+	mailbox #(trans #(N)) mon2scb; //shared mailbox of monitor and scoreboard
+	virtual counter_interface #(N).monitor vif;
+	function new(mailbox #(trans #(N)) mon2scb_arg, virtual counter_interface #(N).monitor mon_vif);
+		mon2scb = mon2scb_arg;
+		vif = mon_vif;
+	endfunction
+	task main();
+		trans #(N) T;
+		forever begin
+			@(posedge vif.clk);
+			T = new();
+			T.rst = vif.rst;
+			T.count = vif.count;
+			mon2scb.put(T);
+			#1;
+		end
+	endtask
+endclass
+
+class scoreboard #(parameter N = GLOBAL_N);
+	bit [N-1:0] exp_count = 0;
+	int pass_count = 0;
+	int fail_count = 0;
+	mailbox #(trans #(N)) mon2scb; //shared mailbox of monitor and scoreboard
+	function new(mailbox #(trans #(N)) mon2scb_arg);
+		mon2scb = mon2scb_arg;
+	endfunction
+	task main();
+		forever begin
+			trans #(N) T;
+			mon2scb.get(T);
+			if(T.rst) exp_count = '0;
+		 	else exp_count = exp_count + 1;
+			$display("SCOREBOARD: count_dut = %0d, count_exp = %0d", T.count, exp_count);
+			if( exp_count == T.count) pass_count = pass_count + 1;
+			else fail_count = fail_count + 1;
+			
+			
+		end
+	endtask
+	function void display();
+		if(fail_count > 0)
+			$display("Simulation Failed - %0d Test cases failed", fail_count);
+		else 
+			$display("Simulation Successfull - %0d Test cases Failed and %0d Test cases passed", fail_count, pass_count);
+	endfunction
+endclass
+endpackage

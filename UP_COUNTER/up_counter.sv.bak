@@ -1,0 +1,17 @@
+// N - bit up counter means it can count upto 2**N
+// 2 bit counter can count upto 0 till 3 - 4
+module up_counter (
+counter_interface.dut intf
+);
+
+// Synchronous Reset
+always_ff @(posedge clk) begin
+	if (rst) 
+		intf.count <= '0;
+	else 
+		intf.count <= intf.count + 1; 
+// need not to check the ending condition, the counter 
+// will automatically go to zero once it reaches the maximum value
+end
+
+endmodule

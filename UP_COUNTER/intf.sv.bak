@@ -1,0 +1,22 @@
+interface counter_interface #(parameter N);
+
+logic clk; 
+logic rst;
+logic[N-1:0]count;
+
+modport dut(
+input clk, rst,
+output count
+);
+
+modport driver(
+input clk, rst
+);
+
+modport monitor(
+input clk, rst, count
+);
+
+endinterface
+
+
