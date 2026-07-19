@@ -1,0 +1,12 @@
+|gates
+a => gate1.IN0
+a => gate2.IN0
+a => gate3.IN0
+b => gate1.IN1
+b => gate2.IN1
+b => gate3.IN1
+y1 <= gate1.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= gate2.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= gate3.DB_MAX_OUTPUT_PORT_TYPE
+
+

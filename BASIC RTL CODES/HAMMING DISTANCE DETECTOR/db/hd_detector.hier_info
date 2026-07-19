@@ -1,0 +1,14 @@
+|hd_detector
+entered_code[0] => hd[0].IN0
+entered_code[1] => hd[1].IN0
+entered_code[2] => hd[2].IN0
+entered_code[3] => hd[3].IN0
+secret_code[0] => hd[0].IN1
+secret_code[1] => hd[1].IN1
+secret_code[2] => hd[2].IN1
+secret_code[3] => hd[3].IN1
+unlock << Equal0.DB_MAX_OUTPUT_PORT_TYPE
+warning << Equal1.DB_MAX_OUTPUT_PORT_TYPE
+alarm << WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,104 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cyclonev
+Quartus root          :  c:/intelfpga_lite/18.1/quartus/bin64/
+Quartus sim root      :  c:/intelfpga_lite/18.1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  systemverilog
+Simulation Mode       :  GUI
+Sim Output File       :  mod10.svo
+Sim SDF file          :  mod10__verilog.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script c:/intelfpga_lite/18.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Probing transcript
+ModelSim-Altera Info: # Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+ModelSim-Altera Info: # do mod10_run_msim_gate_systemverilog.do
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+ModelSim-Altera Info: # vmap work gate_work 
+ModelSim-Altera Info: # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -sv -work work +incdir+. {mod10.svo}
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+ModelSim-Altera Info: # Start time: 16:09:43 on Jun 27,2026
+ModelSim-Altera Info: # vlog -reportprogress 300 -sv -work work "+incdir+." mod10.svo 
+ModelSim-Altera Info: # -- Compiling module mod10
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	mod10
+ModelSim-Altera Info: # End time: 16:09:43 on Jun 27,2026, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -sv -work work +incdir+C:/Users/Noman\ Traders/Desktop/AYAT/QUARTUS/MOD10\ COUNTER {C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/MOD10 COUNTER/mod10_tb.sv}
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+ModelSim-Altera Info: # Start time: 16:09:43 on Jun 27,2026
+ModelSim-Altera Info: # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/MOD10 COUNTER" C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/MOD10 COUNTER/mod10_tb.sv 
+ModelSim-Altera Info: # -- Compiling module mod10_tb
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	mod10_tb
+ModelSim-Altera Info: # End time: 16:09:43 on Jun 27,2026, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs="+acc"  mod10_tb
+ModelSim-Altera Info: # vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs=""+acc"" mod10_tb 
+ModelSim-Altera Info: # Start time: 16:09:43 on Jun 27,2026
+ModelSim-Altera Info: # Loading sv_std.std
+ModelSim-Altera Info: # Loading work.mod10_tb
+ModelSim-Altera Info: # Loading work.mod10
+ModelSim-Altera Info: # Loading cyclonev_ver.cyclonev_io_obuf
+ModelSim-Altera Info: # Loading cyclonev_ver.cyclonev_io_ibuf
+ModelSim-Altera Info: # Loading cyclonev_ver.cyclonev_clkena
+ModelSim-Altera Info: # Loading cyclonev_ver.cyclonev_lcell_comb
+ModelSim-Altera Info: # Loading altera_ver.dffeas
+ModelSim-Altera Info: # Loading altera_ver.PRIM_GDFF_LOW
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # add wave *
+ModelSim-Altera Info: # view structure
+ModelSim-Altera Info: # .main_pane.structure.interior.cs.body.struct
+ModelSim-Altera Info: # view signals
+ModelSim-Altera Info: # .main_pane.objects.interior.cs.body.tree
+ModelSim-Altera Info: # run -all
+ModelSim-Altera Info: # [TB] Applying asynchronous reset...
+ModelSim-Altera Info: # [TB] Reset released. Starting count monitoring.
+ModelSim-Altera Info: # Time = 20000 | rst = 0 | count =    0
+ModelSim-Altera Info: # Time = 30000 | rst = 0 | count =    1
+ModelSim-Altera Info: # Time = 50000 | rst = 0 | count =    2
+ModelSim-Altera Info: # Time = 70000 | rst = 0 | count =    3
+ModelSim-Altera Info: # Time = 90000 | rst = 0 | count =    4
+ModelSim-Altera Info: # Time = 110000 | rst = 0 | count =    5
+ModelSim-Altera Info: # Time = 130000 | rst = 0 | count =    6
+ModelSim-Altera Info: # Time = 150000 | rst = 0 | count =    7
+ModelSim-Altera Info: # Time = 170000 | rst = 0 | count =    8
+ModelSim-Altera Info: # Time = 190000 | rst = 0 | count =    9
+ModelSim-Altera Info: # Time = 210000 | rst = 0 | count =    0
+ModelSim-Altera Info: # Time = 230000 | rst = 0 | count =    1
+ModelSim-Altera Info: # Time = 250000 | rst = 0 | count =    2
+ModelSim-Altera Info: # Time = 270000 | rst = 0 | count =    3
+ModelSim-Altera Info: # Time = 290000 | rst = 0 | count =    4
+ModelSim-Altera Info: # Time = 310000 | rst = 0 | count =    5
+ModelSim-Altera Info: # [TB] Testing mid-cycle reset...
+ModelSim-Altera Info: # Time = 322000 | rst = 1 | count =    0
+ModelSim-Altera Info: # Time = 332000 | rst = 0 | count =    0
+ModelSim-Altera Info: # Time = 350000 | rst = 0 | count =    1
+ModelSim-Altera Info: # Time = 370000 | rst = 0 | count =    2
+ModelSim-Altera Info: # Time = 390000 | rst = 0 | count =    3
+ModelSim-Altera Info: # Time = 410000 | rst = 0 | count =    4
+ModelSim-Altera Info: # [TB] Simulation completed.
+ModelSim-Altera Info: # ** Note: $finish    : C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/MOD10 COUNTER/mod10_tb.sv(55)
+ModelSim-Altera Info: #    Time: 412 ns  Iteration: 0  Instance: /mod10_tb
+ModelSim-Altera Info: # End time: 16:11:58 on Jun 27,2026, Elapsed time: 0:02:15
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+Info: NativeLink simulation flow was successful

@@ -1,0 +1,30 @@
+module counter_tb;
+logic clk;
+logic rst;
+logic select;
+logic count[3:0];
+
+// dut instantiation
+counter dut(
+.clk(clk),
+.rst(rst),
+.select(select),
+.count(count)
+);
+
+// Clock Generation
+always begin
+	clk = ~clk;
+	#5;
+end
+
+//Test cases
+clk = 0; 	#10;
+rst = 1, 	#10;
+rst = 0; 	#10;
+select = 1; #160;
+select = 0; #160;
+
+$stop;
+
+endmodule

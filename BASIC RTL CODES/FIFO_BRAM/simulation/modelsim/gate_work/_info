@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FIFO_BRAM/simulation/modelsim
+vfifo_bram
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1783665934
+!i10b 1
+!s100 1`aDeLk;W]H:UXWRbND0R3
+II55GCj4UMUkTM[JilcMPf2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 fifo_bram_svo_unit
+S1
+R0
+w1783665925
+8fifo_bram.svo
+Ffifo_bram.svo
+L0 31
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1783665934.000000
+!s107 fifo_bram.svo|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+.|fifo_bram.svo|
+!i113 1
+Z6 o-sv -work work
+!s92 -sv -work work +incdir+.
+Z7 tCvgOpt 0
+vfifo_bram_tb
+R1
+R2
+!i10b 1
+!s100 kekRgNN^n[d=iZgH7EQ<?2
+I0F<:eHKG2o_fh=0dXh1l00
+R3
+!s105 fifo_bram_tb_sv_unit
+S1
+R0
+w1783665607
+8C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FIFO_BRAM/fifo_bram_tb.sv
+FC:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FIFO_BRAM/fifo_bram_tb.sv
+L0 6
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FIFO_BRAM/fifo_bram_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FIFO_BRAM|C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FIFO_BRAM/fifo_bram_tb.sv|
+!i113 1
+R6
+!s92 -sv -work work {+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FIFO_BRAM}
+R7

@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FA/fa.sv
+source_file = 1, C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FA/ha.sv
+source_file = 1, C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FA/fa_tb.sv
+source_file = 1, C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/FA/db/fa.cbx.xml
+design_name = fa
+instance = comp, \sum~output , sum~output, fa, 1
+instance = comp, \cout~output , cout~output, fa, 1
+instance = comp, \b~input , b~input, fa, 1
+instance = comp, \cin~input , cin~input, fa, 1
+instance = comp, \a~input , a~input, fa, 1
+instance = comp, \ha2|sum , ha2|sum, fa, 1
+instance = comp, \cout~0 , cout~0, fa, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, fa, 1

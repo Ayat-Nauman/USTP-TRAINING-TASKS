@@ -1,0 +1,19 @@
+|rc
+clk => q[0]~reg0.CLK
+clk => q[1]~reg0.CLK
+clk => q[2]~reg0.CLK
+clk => q[3]~reg0.CLK
+rst => q[0]~reg0.ACLR
+rst => q[1]~reg0.ACLR
+rst => q[2]~reg0.ACLR
+rst => q[3]~reg0.ACLR
+ori[0] => WideOr0.IN0
+ori[1] => WideOr0.IN1
+ori[2] => WideOr0.IN2
+ori[3] => WideOr0.IN3
+q[0] << q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[1] << q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[2] << q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[3] << q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

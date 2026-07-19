@@ -1,0 +1,41 @@
+`timescale 1ns/1ps 
+
+// for simulating it on quartus, we need timescale, 
+// however its a combinational circuit which does not have any clock
+
+module p_encoder_tb;
+
+logic [7:0] tb_data_in;
+logic [2:0] tb_data_out;
+
+// DUT instantiation
+  p_encoder dut (
+    .data_in (tb_data_in),
+    .data_out(tb_data_out)
+  );
+  
+// Test cases
+initial begin
+
+	// Case 0: All zeros (Default condition)
+	tb_data_in = 8'b0000_0000; #10;
+	
+	// Cases 1-8
+	tb_data_in = 8'b0000_0001; #10; // Expect 0
+	tb_data_in = 8'b0000_0010; #10; // Expect 1
+	tb_data_in = 8'b0000_0100; #10; // Expect 2
+	tb_data_in = 8'b0000_1000; #10; // Expect 3
+	tb_data_in = 8'b0001_0000; #10; // Expect 4
+	tb_data_in = 8'b0010_0000; #10; // Expect 5
+	tb_data_in = 8'b0100_0000; #10; // Expect 6
+	tb_data_in = 8'b1000_0000; #10; // Expect 7
+	
+	// Priority Testing (Multiple bits active) 
+	tb_data_in = 8'b1000_0001; #10; // Expect 7   
+	tb_data_in = 8'b0011_1000; #10; // Expect 5
+	tb_data_in = 8'b1111_1111; #10; // Expect 7
+	
+	$stop;
+	
+end
+endmodule

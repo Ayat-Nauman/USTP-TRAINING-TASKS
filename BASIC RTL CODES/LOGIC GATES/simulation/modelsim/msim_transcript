@@ -1,0 +1,55 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do gates_run_msim_gate_systemverilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+. {gates.svo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:59:55 on Jun 26,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+." gates.svo 
+# -- Compiling module gates
+# 
+# Top level modules:
+# 	gates
+# End time: 22:59:55 on Jun 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/Noman\ Traders/Desktop/AYAT/QUARTUS/LOGIC\ GATES {C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/LOGIC GATES/gates_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:59:55 on Jun 26,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/LOGIC GATES" C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/LOGIC GATES/gates_tb.sv 
+# -- Compiling module gates_tb
+# 
+# Top level modules:
+# 	gates_tb
+# End time: 22:59:55 on Jun 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs="+acc"  gates_tb
+# vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs=""+acc"" gates_tb 
+# Start time: 22:59:56 on Jun 26,2026
+# Loading sv_std.std
+# Loading work.gates_tb
+# Loading work.gates
+# Loading cyclonev_ver.cyclonev_io_obuf
+# Loading cyclonev_ver.cyclonev_io_ibuf
+# Loading cyclonev_ver.cyclonev_lcell_comb
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/LOGIC GATES/gates_tb.sv(39)
+#    Time: 40 ns  Iteration: 0  Instance: /gates_tb
+# Break in Module gates_tb at C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/LOGIC GATES/gates_tb.sv line 39
+# End time: 23:02:22 on Jun 26,2026, Elapsed time: 0:02:26
+# Errors: 0, Warnings: 0

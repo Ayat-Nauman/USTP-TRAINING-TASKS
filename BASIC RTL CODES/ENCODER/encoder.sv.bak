@@ -1,0 +1,20 @@
+module encoder(
+input [7:0]data_in, 
+output [2:0]data_out
+);
+
+always_comb begin
+	case(data_in)
+		8'b0000_0001: data_out = 3'b000; // Bit 0 is high
+      8'b0000_0010: data_out = 3'b001; // Bit 1 is high
+      8'b0000_0100: data_out = 3'b010; // Bit 2 is high
+      8'b0000_1000: data_out = 3'b011; // Bit 3 is high
+      8'b0001_0000: data_out = 3'b100; // Bit 4 is high
+      8'b0010_0000: data_out = 3'b101; // Bit 5 is high
+      8'b0100_0000: data_out = 3'b110; // Bit 6 is high
+      8'b1000_0000: data_out = 3'b111; // Bit 7 is high
+		default:      data_out = 3'bxxx;
+	endcase	
+end
+
+endmodule

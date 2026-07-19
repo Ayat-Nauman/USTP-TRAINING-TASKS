@@ -1,0 +1,40 @@
+mult_fsm #(parameter N = 4)(
+input logic clk,
+input logic rst,
+input logic  [N-1:0] multiplier,
+input logic  [N-1:0] multiplicand,
+output logic [(2*N)-1:0] product,
+output logic done
+);
+
+// shift register Q 
+logic [(2*N)-1:0] q;
+
+//if LSB of multiplicand is 0 = means even
+// only shifting is needed 
+//if LSB of multiplicand is 1 = means odd
+// then we have to shift and add
+bit lsb;
+assign lsb = multiplicand[0];
+
+
+//Counter
+logic [$clog2(N)-1:0] count;
+//states
+typedef enum logic [2:0]{
+	LOAD_INPUTS,
+	CHECK_LSB,
+	ADD,
+	SHIFT,
+	COUNT,
+	DONE
+} states;
+
+states cs, ns;
+
+//Input combinational circuit - next state logic
+always_comb begin
+		case(cs) 
+		LOAD_INPUTS: 	ns = CHECK_LSB;
+		CHECK_LSB: 		(lsb)? ns = ADD : ns = SHIFT; 
+end

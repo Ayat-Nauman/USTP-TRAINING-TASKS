@@ -1,0 +1,97 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "intf.empty",
+					"strict" : false
+				},
+				{
+					"name" : "intf.full",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.rst",
+					"strict" : false
+				},
+				{
+					"name" : "intf.pop",
+					"strict" : false
+				},
+				{
+					"name" : "intf.clk",
+					"strict" : false
+				},
+				{
+					"name" : "intf.push",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "intf.data_in[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

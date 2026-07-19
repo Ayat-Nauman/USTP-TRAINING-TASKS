@@ -1,0 +1,6 @@
+interface  
+	input logic clk, 
+	input logic rst,
+	input logic wr_en,
+	input logic r_en,
+	

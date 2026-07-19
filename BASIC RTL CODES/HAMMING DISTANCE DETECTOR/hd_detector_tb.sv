@@ -1,0 +1,36 @@
+`timescale 1ns/1ps
+
+module hd_detector_tb;
+
+logic [3:0]entered_code;
+logic [3:0]secret_code;
+logic unlock;
+logic warning;
+logic alarm;
+
+//dut instantiation
+hd_detector dut(
+.entered_code(entered_code),
+.secret_code(secret_code),
+.unlock(unlock),
+.warning(warning),
+.alarm(alarm)
+);
+
+// Test cases
+
+initial begin
+	
+		secret_code = 4'b1010; entered_code = 4'b1010; #10; // Unlock
+		secret_code = 4'b1010; entered_code = 4'b1011; #10; // Warning
+		secret_code = 4'b1010; entered_code = 4'b1001; #10; // Alarm
+		secret_code = 4'b0101; entered_code = 4'b0101; #10; // Unlock
+		secret_code = 4'b0101; entered_code = 4'b1101; #10; // Warning
+		secret_code = 4'b0101; entered_code = 4'b1010; #10; // Unlock
+
+$stop;
+
+end
+
+endmodule
+

@@ -1,0 +1,52 @@
+module rot_letters (
+    input  wire [1:0] count,    // The 2-bit count from your image
+    output reg  [6:0] seg0,     // Seven-segment output for Display 0 (Rightmost)
+    output reg  [6:0] seg1,     // Seven-segment output for Display 1
+    output reg  [6:0] seg2,     // Seven-segment output for Display 2
+    output reg  [6:0] seg3      // Seven-segment output for Display 3 (Leftmost)
+);
+
+    // Seven-segment constant definitions (Adjust these to match your previous decoder)
+    // Assuming active-low (0 turns LED on) or active-high. Replace with your actual values.
+    localparam CHAR_D = 7'b0100001; // Example pattern for 'd'
+    localparam CHAR_E = 7'b0000110; // Example pattern for 'E'
+    localparam CHAR_1 = 7'b1001111; // Example pattern for '1'
+    localparam CHAR_0 = 7'b1000000; // Example pattern for '0'
+
+    // Combinational logic to rotate characters based on count
+    always @(*) begin
+        case (count)
+            2'b00: begin
+                seg3 = CHAR_D; // Leftmost
+                seg2 = CHAR_E;
+                seg1 = CHAR_1;
+                seg0 = CHAR_0; // Rightmost
+            end
+            2'b01: begin
+                seg3 = CHAR_E;
+                seg2 = CHAR_1;
+                seg1 = CHAR_0;
+                seg0 = CHAR_D;
+            end
+            2'b10: begin
+                seg3 = CHAR_1;
+                seg2 = CHAR_0;
+                seg1 = CHAR_D;
+                seg0 = CHAR_E;
+            end
+            2'b11: begin
+                seg3 = CHAR_0;
+                seg2 = CHAR_D;
+                seg1 = CHAR_E;
+                seg0 = CHAR_1;
+            end
+            default: begin
+                seg3 = 7'b1111111; // All off
+                seg2 = 7'b1111111;
+                seg1 = 7'b1111111;
+                seg0 = 7'b1111111;
+            end
+        endcase
+    end
+
+endmodule

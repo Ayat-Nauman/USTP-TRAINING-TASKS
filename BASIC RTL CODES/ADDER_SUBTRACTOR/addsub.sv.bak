@@ -1,0 +1,14 @@
+module addsub #( 
+	parameter N = 8
+)(
+	input logic  [N-1:0]a,
+	input logic  [N-1:0]b,
+	input logic  [N-1:0]cin,
+	input logic  add_sub,		// 0 = add, 1 = sub 
+	output logic [N-1:0]s,
+	output logic cout,
+	output logic overflow
+);
+
+logic [b_new
+assign b_new = add_sub ^ b;

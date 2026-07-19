@@ -1,0 +1,20 @@
+module rc(
+	input clk, 
+	input rst,
+	output logic  [3:0] q
+
+);
+	logic serial_in;
+	assign q[0] = serial_in;
+	
+	always_ff @(posedge clk or posedge rst) begin
+		
+		if(rst) 
+			q<=4'b1000;
+			
+		else
+			q <= {q[2:0],serial_in};
+		end
+	end
+	
+endmodule

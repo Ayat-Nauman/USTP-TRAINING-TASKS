@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "unlock",
+					"strict" : false
+				},
+				{
+					"name" : "warning",
+					"strict" : false
+				},
+				{
+					"name" : "alarm",
+					"strict" : false
+				},
+				{
+					"name" : "entered_code[0]",
+					"strict" : false
+				},
+				{
+					"name" : "secret_code[0]",
+					"strict" : false
+				},
+				{
+					"name" : "entered_code[1]",
+					"strict" : false
+				},
+				{
+					"name" : "secret_code[1]",
+					"strict" : false
+				},
+				{
+					"name" : "entered_code[2]",
+					"strict" : false
+				},
+				{
+					"name" : "secret_code[2]",
+					"strict" : false
+				},
+				{
+					"name" : "entered_code[3]",
+					"strict" : false
+				},
+				{
+					"name" : "secret_code[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

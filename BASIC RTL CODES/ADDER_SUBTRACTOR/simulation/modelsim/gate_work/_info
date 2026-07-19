@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/simulation/modelsim
+vaddsub
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1782463604
+!i10b 1
+!s100 c]OFiVhlA7U[@V<CJn5ja2
+ILEiO[Cj9GNCg8EHL2mlI]3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 addsub_svo_unit
+S1
+R0
+w1782463598
+8addsub.svo
+Faddsub.svo
+L0 31
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1782463604.000000
+!s107 addsub.svo|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+.|addsub.svo|
+!i113 1
+Z4 o-sv -work work
+!s92 -sv -work work +incdir+.
+Z5 tCvgOpt 0
+vaddsub_tb
+R1
+!s110 1782463605
+!i10b 1
+!s100 X7dn_Z28]4Z6XK7RH5nXh0
+IG`mCJJ5AigMK9B_PYVkQ?1
+R2
+!s105 addsub_tb_sv_unit
+S1
+R0
+w1782456175
+8C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/addsub_tb.sv
+FC:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/addsub_tb.sv
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1782463605.000000
+!s107 C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/addsub_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR|C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/addsub_tb.sv|
+!i113 1
+R4
+!s92 -sv -work work {+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR}
+R5

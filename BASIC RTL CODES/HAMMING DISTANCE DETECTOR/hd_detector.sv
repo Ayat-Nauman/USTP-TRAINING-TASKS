@@ -1,0 +1,36 @@
+// digital access control system is actually minium distance 
+// finder or hamming distance finder. 
+// A code that has a hamming distance 0 with its corresponding secret code
+// means they are exactly same and they are 0 units apart/different from each other.
+// By definition, the Hamming distance between two binary codes of equal length 
+// is the number of positions at which the corresponding bits are different.
+  
+module hd_detector(
+input logic [3:0]entered_code,
+input logic [3:0]secret_code,
+output logic unlock,
+output logic warning,
+output logic alarm
+);
+
+logic [3:0]hd;
+logic [2:0]diff;
+
+assign hd = secret_code ^ entered_code;
+
+assign diff = hd[3] + hd[2] + hd[1] + hd[0]; // count no of ones in the hamming distance
+
+always_comb begin
+	unlock 	= 0;
+	warning 	= 0;
+	alarm 	= 0;
+	
+	case(hd)
+		3'b0: 	unlock  	= 1;
+		3'b1: 	warning 	= 1;
+		default: alarm 	= 1; // when difference is greater than 1
+	endcase
+	
+end
+
+endmodule

@@ -1,0 +1,73 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cyclonev
+Quartus root          :  c:/intelfpga_lite/18.1/quartus/bin64/
+Quartus sim root      :  c:/intelfpga_lite/18.1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  systemverilog
+Simulation Mode       :  GUI
+Sim Output File       :  addsub.svo
+Sim SDF file          :  addsub__verilog.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script c:/intelfpga_lite/18.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File addsub_run_msim_gate_systemverilog.do already exists - backing up current file as addsub_run_msim_gate_systemverilog.do.bak9
+Probing transcript
+ModelSim-Altera Info: # Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+ModelSim-Altera Info: # do addsub_run_msim_gate_systemverilog.do
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+ModelSim-Altera Info: # vmap work gate_work 
+ModelSim-Altera Info: # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -sv -work work +incdir+. {addsub.svo}
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+ModelSim-Altera Info: # Start time: 13:46:44 on Jun 26,2026
+ModelSim-Altera Info: # vlog -reportprogress 300 -sv -work work "+incdir+." addsub.svo 
+ModelSim-Altera Info: # -- Compiling module addsub
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	addsub
+ModelSim-Altera Info: # End time: 13:46:44 on Jun 26,2026, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -sv -work work +incdir+C:/Users/Noman\ Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR {C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/addsub_tb.sv}
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+ModelSim-Altera Info: # Start time: 13:46:45 on Jun 26,2026
+ModelSim-Altera Info: # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR" C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/addsub_tb.sv 
+ModelSim-Altera Info: # -- Compiling module addsub_tb
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	addsub_tb
+ModelSim-Altera Info: # End time: 13:46:45 on Jun 26,2026, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs="+acc"  addsub_tb
+ModelSim-Altera Info: # vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs=""+acc"" addsub_tb 
+ModelSim-Altera Info: # Start time: 13:46:45 on Jun 26,2026
+ModelSim-Altera Info: # Loading sv_std.std
+ModelSim-Altera Info: # Loading work.addsub_tb
+ModelSim-Altera Info: # Loading work.addsub
+ModelSim-Altera Info: # Loading cyclonev_ver.cyclonev_io_obuf
+ModelSim-Altera Info: # Loading cyclonev_ver.cyclonev_io_ibuf
+ModelSim-Altera Info: # Loading cyclonev_ver.cyclonev_lcell_comb
+ModelSim-Altera Info: # ** Error (suppressible): (vsim-3584) C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/addsub_tb.sv(17): Module parameter 'N' not found for override.
+ModelSim-Altera Info: #    Time: 0 ps  Iteration: 0  Instance: /addsub_tb File: C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/ADDER_SUBTRACTOR/addsub_tb.sv
+ModelSim-Altera Info: # Error loading design
+ModelSim-Altera Info: # Error: Error loading design
+ModelSim-Altera Info: #        Pausing macro execution
+ModelSim-Altera Info: # MACRO ./addsub_run_msim_gate_systemverilog.do PAUSED at line 12
+ModelSim-Altera Info: # End time: 13:50:10 on Jun 26,2026, Elapsed time: 0:03:25
+ModelSim-Altera Info: # Errors: 1, Warnings: 0
+Info: NativeLink simulation flow was successful

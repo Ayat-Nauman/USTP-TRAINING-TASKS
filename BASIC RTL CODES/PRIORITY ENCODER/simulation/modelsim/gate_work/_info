@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Noman Traders/Desktop/AYAT/QUARTUS/PRIORITY ENCODER/simulation/modelsim
+vp_encoder
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1782192629
+!i10b 1
+!s100 UY[;dJ[U`A]@zIE;6fnWk1
+IIGjFn_6D[[a;9<7GFBA[^2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 p_encoder_svo_unit
+S1
+R0
+w1782192622
+8p_encoder.svo
+Fp_encoder.svo
+L0 31
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1782192629.000000
+!s107 p_encoder.svo|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+.|p_encoder.svo|
+!i113 1
+Z6 o-sv -work work
+!s92 -sv -work work +incdir+.
+Z7 tCvgOpt 0
+vp_encoder_tb
+R1
+R2
+!i10b 1
+!s100 1gaBZDO8C?4F^BejH^LG>2
+I;D==AbOEWf9KZ[=Wz?]NC3
+R3
+!s105 p_encoder_tb_sv_unit
+S1
+R0
+w1782192532
+8C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/PRIORITY ENCODER/p_encoder_tb.sv
+FC:/Users/Noman Traders/Desktop/AYAT/QUARTUS/PRIORITY ENCODER/p_encoder_tb.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/PRIORITY ENCODER/p_encoder_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/PRIORITY ENCODER|C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/PRIORITY ENCODER/p_encoder_tb.sv|
+!i113 1
+R6
+!s92 -sv -work work {+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/PRIORITY ENCODER}
+R7

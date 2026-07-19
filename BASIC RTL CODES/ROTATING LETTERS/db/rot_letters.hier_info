@@ -1,0 +1,43 @@
+|rot_letters
+count[0] => Decoder0.IN1
+count[0] => seg3[0].DATAIN
+count[0] => seg2[0].DATAIN
+count[0] => seg1[0].DATAIN
+count[0] => seg0[0].DATAIN
+count[1] => Decoder0.IN0
+count[1] => seg3[6].DATAIN
+count[1] => seg2[2].DATAIN
+count[1] => seg2[1].DATAIN
+count[1] => seg1[6].DATAIN
+count[1] => seg0[2].DATAIN
+count[1] => seg0[1].DATAIN
+seg0[0] << count[0].DB_MAX_OUTPUT_PORT_TYPE
+seg0[1] << count[1].DB_MAX_OUTPUT_PORT_TYPE
+seg0[2] << count[1].DB_MAX_OUTPUT_PORT_TYPE
+seg0[3] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg0[4] << <GND>
+seg0[5] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg0[6] << seg0.DB_MAX_OUTPUT_PORT_TYPE
+seg1[0] << count[0].DB_MAX_OUTPUT_PORT_TYPE
+seg1[1] << seg0.DB_MAX_OUTPUT_PORT_TYPE
+seg1[2] << seg0.DB_MAX_OUTPUT_PORT_TYPE
+seg1[3] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg1[4] << <GND>
+seg1[5] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg1[6] << count[1].DB_MAX_OUTPUT_PORT_TYPE
+seg2[0] << count[0].DB_MAX_OUTPUT_PORT_TYPE
+seg2[1] << count[1].DB_MAX_OUTPUT_PORT_TYPE
+seg2[2] << count[1].DB_MAX_OUTPUT_PORT_TYPE
+seg2[3] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg2[4] << <GND>
+seg2[5] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg2[6] << seg0.DB_MAX_OUTPUT_PORT_TYPE
+seg3[0] << count[0].DB_MAX_OUTPUT_PORT_TYPE
+seg3[1] << seg0.DB_MAX_OUTPUT_PORT_TYPE
+seg3[2] << seg0.DB_MAX_OUTPUT_PORT_TYPE
+seg3[3] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg3[4] << <GND>
+seg3[5] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+seg3[6] << count[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

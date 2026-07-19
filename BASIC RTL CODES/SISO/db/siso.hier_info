@@ -1,0 +1,23 @@
+|siso
+clk => q[0].CLK
+clk => q[1].CLK
+clk => q[2].CLK
+clk => q[3].CLK
+rst => q[0].ACLR
+rst => q[1].ACLR
+rst => q[2].ACLR
+rst => q[3].ACLR
+serial_in => q.DATAB
+serial_in => q.DATAB
+selection => q.OUTPUTSELECT
+selection => q.OUTPUTSELECT
+selection => q.OUTPUTSELECT
+selection => q.OUTPUTSELECT
+selection => serial_out.OUTPUTSELECT
+selection => q.OUTPUTSELECT
+selection => q.OUTPUTSELECT
+selection => q.OUTPUTSELECT
+selection => q.OUTPUTSELECT
+serial_out << serial_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

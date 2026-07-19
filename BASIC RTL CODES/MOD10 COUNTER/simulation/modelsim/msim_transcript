@@ -1,0 +1,83 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do mod10_run_msim_gate_systemverilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+. {mod10.svo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:09:43 on Jun 27,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+." mod10.svo 
+# -- Compiling module mod10
+# 
+# Top level modules:
+# 	mod10
+# End time: 16:09:43 on Jun 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/Noman\ Traders/Desktop/AYAT/QUARTUS/MOD10\ COUNTER {C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/MOD10 COUNTER/mod10_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:09:43 on Jun 27,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/MOD10 COUNTER" C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/MOD10 COUNTER/mod10_tb.sv 
+# -- Compiling module mod10_tb
+# 
+# Top level modules:
+# 	mod10_tb
+# End time: 16:09:43 on Jun 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs="+acc"  mod10_tb
+# vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs=""+acc"" mod10_tb 
+# Start time: 16:09:43 on Jun 27,2026
+# Loading sv_std.std
+# Loading work.mod10_tb
+# Loading work.mod10
+# Loading cyclonev_ver.cyclonev_io_obuf
+# Loading cyclonev_ver.cyclonev_io_ibuf
+# Loading cyclonev_ver.cyclonev_clkena
+# Loading cyclonev_ver.cyclonev_lcell_comb
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# [TB] Applying asynchronous reset...
+# [TB] Reset released. Starting count monitoring.
+# Time = 20000 | rst = 0 | count =    0
+# Time = 30000 | rst = 0 | count =    1
+# Time = 50000 | rst = 0 | count =    2
+# Time = 70000 | rst = 0 | count =    3
+# Time = 90000 | rst = 0 | count =    4
+# Time = 110000 | rst = 0 | count =    5
+# Time = 130000 | rst = 0 | count =    6
+# Time = 150000 | rst = 0 | count =    7
+# Time = 170000 | rst = 0 | count =    8
+# Time = 190000 | rst = 0 | count =    9
+# Time = 210000 | rst = 0 | count =    0
+# Time = 230000 | rst = 0 | count =    1
+# Time = 250000 | rst = 0 | count =    2
+# Time = 270000 | rst = 0 | count =    3
+# Time = 290000 | rst = 0 | count =    4
+# Time = 310000 | rst = 0 | count =    5
+# [TB] Testing mid-cycle reset...
+# Time = 322000 | rst = 1 | count =    0
+# Time = 332000 | rst = 0 | count =    0
+# Time = 350000 | rst = 0 | count =    1
+# Time = 370000 | rst = 0 | count =    2
+# Time = 390000 | rst = 0 | count =    3
+# Time = 410000 | rst = 0 | count =    4
+# [TB] Simulation completed.
+# ** Note: $finish    : C:/Users/Noman Traders/Desktop/AYAT/QUARTUS/MOD10 COUNTER/mod10_tb.sv(55)
+#    Time: 412 ns  Iteration: 0  Instance: /mod10_tb
+# End time: 16:11:58 on Jun 27,2026, Elapsed time: 0:02:15
+# Errors: 0, Warnings: 0
