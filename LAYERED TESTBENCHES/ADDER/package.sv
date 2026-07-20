@@ -3,7 +3,7 @@
 // DRIVER AND MONITOR SHOULD HAVE SAME TIMING  - I USED #0 DELAY IN THEM
 // SCOREBOARD AND TRANSACTION CLASSES NEED NO DELAY
 // WHAT IS #0 DELAY?
-// #0 MEANS ?wait for the current work to finish, then continously
+// #0 MEANS ?wait for the current work to finish, then continue
 // BY INCLUDING #0, simulator says:
 // I have changed the inputs. Let every combinational logic update first. Then I will read the outputs.?
 // PACKAGE FILE INCLUDES ALL THE CLASSES AND THEIR DEFINITIONS
